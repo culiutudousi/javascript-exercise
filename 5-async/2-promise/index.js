@@ -7,9 +7,11 @@ function fetchData(url) {
     xhr.send();
 
     xhr.onreadystatechange = () => {
+      console.log(xhr.readyState);
       if (xhr.readyState !== 4) {
         return;
       }
+      console.log(xhr.responseText);
       if (xhr.status === 200) {
         resolve(xhr.responseText);
       } else {
